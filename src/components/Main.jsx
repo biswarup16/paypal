@@ -25,7 +25,7 @@ const Main = () => {
             </p>
           </div>
           <hr className="mt-3 mb-1" />
-          <div className="lg:px-5 bg-slate-400">
+          <div className="lg:px-5 bg-black py-3 rounded-lg">
             {route == "send" ? (
               <>
                 {" "}
