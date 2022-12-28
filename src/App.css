@@ -1,0 +1,18 @@
+body{
+background: rgb(5,4,25);
+background: linear-gradient(90deg, rgba(5,4,25,1) 0%, rgba(14,14,56,1) 35%, rgba(9,40,46,1) 100%);
+}
+
+.glass {
+    backdrop-filter: blur(5px) saturate(174%);
+    -webkit-backdrop-filter: blur(5px) saturate(174%);
+    background-color: rgba(110, 107, 107, 0.44);
+    border-radius: 12px;
+    border: 1px solid rgba(209, 213, 219, 0.3);
+}
+.glass2{
+    backdrop-filter: blur(9px) saturate(180%);
+    -webkit-backdrop-filter: blur(9px) saturate(180%);
+    background-color: rgba(12, 12, 12, 0.09);
+    border-bottom: 1px solid rgba(209, 213, 219, 0.3);
+}
