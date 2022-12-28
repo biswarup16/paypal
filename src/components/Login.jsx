@@ -20,17 +20,20 @@ const Login = () => {
       if (chainId == "0x3") {
         App.setChain("Ropsten")
         App.setLogin(true);
-
+        App.setCurrency("RopstenEther")
+        App.setSymbol('rEth')
       }
       else if(chainId == "0x4"){
         App.setChain("Rinkeby")
         App.setLogin(true);
-
+        App.setCurrency("RinkebyEther")
+        App.setSymbol('rEth')
       }
       else if(chainId == "0x13881"){
         App.setChain("Polygon")
         App.setLogin(true);
-
+        App.setCurrency("Matic")
+        App.setSymbol('rEth')
       }
       else{
         App.setLogin(false)
