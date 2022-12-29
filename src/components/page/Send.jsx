@@ -6,6 +6,7 @@ const Send = () => {
   const [showErc, setShowErc] = useState(false);
   const [ercLoading, setErcLoading] = useState(false);
   const [tokenChanged, setTokenChanged] = useState(false);
+  const [ercTokenAddress, setErcTokenAddress] = useState('')
   const App = useContext(AppState);
   return (
     <>
@@ -22,8 +23,7 @@ const Send = () => {
               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
               <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11zm0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" />
             </svg>
-            <p className="text-2xl text-white">{App.symbol
-            }</p>
+            <p className="text-2xl text-white">{App.symbol}</p>
 
             <svg
               onClick={() => {
@@ -47,13 +47,17 @@ const Send = () => {
             >
               <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499L12.136.326zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484L5.562 3zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-13z" />
             </svg>
-            <p className="text-2xl text-white">Balance : {App.balance} {App.symbol} </p>
+            <p className="text-2xl text-white">
+              Balance : {App.balance} {App.symbol}{" "}
+            </p>
           </div>
         </div>
         {showErc ? (
           <>
             <div className=" px-1 mt-3 flex justify-evenly items-center">
               <input
+                onChange={(e)=>{setErcTokenAddress(e.target.value)}}
+                value={ercTokenAddress}
                 type="text"
                 className="px-5 py-2 rounded-lg border-2 border-blue-700"
                 name=""
@@ -63,11 +67,7 @@ const Send = () => {
               {ercLoading ? (
                 <>
                   {" "}
-                  <TailSpin 
-                  width={28}
-                  height={28}
-                  color={white}
-                  />
+                  <TailSpin width={28} height={28} color={white} />
                 </>
               ) : tokenChanged ? (
                 <button className="border-2 border-white px-8 text-yellow-50 py-2 rounded-lg bg-red-700">

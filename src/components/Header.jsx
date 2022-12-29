@@ -10,10 +10,16 @@ const Header = () => {
     ethereum.on("chainChanged", async (chainId) => {
       if (chainId == "0x3") {
         App.setChain("Ropsten");
+        App.setCurrency("RopstenEther")
+        App.setSymbol("rEth")
       } else if (chainId == "0x4") {
         App.setChain("Rinkeby");
+        App.setCurrency("RinkebyEther")
+        App.setSymbol("rEth")
       } else if (chainId == "0x13881") {
         App.setChain("Polygon");
+        App.setCurrency("Matic")
+        App.setSymbol("Matic")
       } else {
         App.setLogin(false);
       }
